@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>Kindly Login to your twitter account!</h1>
+<button class="btn btn-success" onclick=" window.open('auth','_blank');"> Login with twitter</button>
+<form action="callback" method="GET">
+	{% csrf_token %}
+	<label>Enter Pin!</label>
+	<input type="number" id="pin" name="pin"> 
+	<input type="submit" value="Submit!">
+</form>
+{% endblock %}

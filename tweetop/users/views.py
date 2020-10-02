@@ -55,7 +55,7 @@ def callback(request):
 		print("Error Occured at views 43!")
 	
 	return redirect("http://127.0.0.1:8000")
-#		
+#
 # return render(request,'index_view', {})
 	#return render(request,'home.html',{})
 #print(acess_token, acess_token_secret)
