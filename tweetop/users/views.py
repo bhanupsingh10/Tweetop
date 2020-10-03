@@ -11,7 +11,7 @@ API_key_secret = "UnQJaovLV1PLBpqCDQaM5oKj6K0d2nEFbGOl11VTPScxmICiEE"
 def index_view(request):
 	print(request)
 	if(checker(request)):
-		return render(request, "home.html", {})
+		return redirect("http://127.0.0.1:8000/home")
 	else:
 		return render_to_response("login.html")
 
