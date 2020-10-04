@@ -1,14 +1,50 @@
+{% load static %}
 <!DOCTYPE html>
 <html>
 	<head>
 		<title>
 			Welcome to Tweetop!
 		</title>
+		<link rel="stylesheet" href="{% static 'css/home.css' %}">
+		<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 	</head>
-	<body>
-		<h1>
-			Welcome!
+
+	<body id='home'>
+		<form action="logout">
+			<button type="submit">Logout</button>
+		</form>
+		<h1 id="Wel">
+			Welcome to TweetOp!
 		</h1>
-		<input type="button">
+		<p class="top"> #Trending Users:</p>
+		<ol >
+			{% for user in users %}
+				<li> {{user}} </li>
+			{% endfor %}
+		</ol>
+		<p class="top">#Trending Links:</p>
+		<ol>
+			{% for link in links %}
+				<li> {{link}} </li>
+			{% endfor %}
+		</ol>
+		{% for tw in data %}
+			<div class="w3-container">		  
+				<div class="w3-card-4" style="width:70%">
+				  <header class="w3-container w3-light-grey">
+					<h3>{{ tw.Name }}</h3>
+				  </header>
+				  <div class="w3-container">
+					<hr>
+					<img src="{{ tw.dp_url }}" alt="Profile Pic" class="w3-left w3-circle w3-margin-right" style="width:60px">
+					<p>{{ tw.tweet }}</p><br>
+				  </div>
+				</div>
+				<p></p>
+				<p></p>
+			  </div>
+		{% endfor %}
 	</body>
 </html>

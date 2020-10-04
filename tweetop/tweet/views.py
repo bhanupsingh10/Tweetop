@@ -10,7 +10,9 @@ import os
 from dateutil import parser
 import datetime
 from datetime import date
-
+import re
+from heapq import nlargest
+from users.views import index_view
 # Create your views here.
 
 def url_filter(my_tweets): 		# Returns only tweets with links
@@ -38,8 +40,11 @@ def get_data(request):
 	api = get_Api(request)
 	BASE_DIR = os.getcwd()
 	print(BASE_DIR)
-	cred = credentials.Certificate(os.path.join(BASE_DIR,"tweet", "static", "cred.json"))
-	firebase_admin.initialize_app(cred)
+	try:
+		firebase_admin.get_app()
+	except ValueError as e:
+		cred = credentials.Certificate(os.path.join(BASE_DIR,"tweet", "static", "cred.json"))
+		firebase_admin.initialize_app(cred)
 	db = firestore.client()
 	doc_ref = db.collection('users').document('data')
 	#print(api)
@@ -50,18 +55,45 @@ def get_data(request):
 		users_list.append(f.screen_name)
 	users_list.append(me.screen_name)
 	#print(users_list)
+	full_data = []
+	trending_user = {}
+	trending_url = {}
 	for uid in users_list:
 		my_tweets = api.user_timeline(uid, count=10)			# Getting User Tweets
 		my_tweets = url_filter(my_tweets)					# Filtering tweets wih links
 		my_tweets = date_filter(my_tweets)				# Filtering tweets of past 7 days
-		
+		trending_user[uid] = len(my_tweets)
 		#print(len(my_tweets))
 		for tweets in my_tweets:
 			my_tweet_text = tweets.text
-			doc_ref.collection(uid).document(tweets.id_str).set({
-				'UserId': uid,
+			user_name = tweets.user.name
+			dp_url = tweets.user.profile_image_url_https
+			my_dict = {
+				'Name': user_name,
 				'tweet' : my_tweet_text,
 				'created_date' : tweets.created_at,
-			})
-	
-	return render(request, "home.html", {})
+				'url' : tweets.entities['urls'][0]['expanded_url'],
+				'dp_url': dp_url
+			}
+			doc_ref.collection(uid).document(tweets.id_str).set(my_dict)
+			full_data.append(my_dict)
+			url = my_dict['url']
+			result = re.sub(r'(.*://)?([^/?]+).*', '\g<1>\g<2>', url)
+			if result in trending_url.keys():
+				trending_url[result]+=1
+			else:
+				trending_url[result] = 0
+
+	return full_data, trending_url, trending_user
+
+def dashboard(request):
+	my_data, trending_url, trending_user = get_data(request)
+	top_link = nlargest(3, trending_url, key = trending_url.get)
+	top_user = nlargest(3, trending_user, key = trending_user.get)
+
+	return render(request, 'home.html', {'data':my_data, 'links':top_link, 'users':top_user})
+
+def logout(request):
+	request.session['access_key']=None
+	request.session['access_key_secret']=None
+	return index_view(request)

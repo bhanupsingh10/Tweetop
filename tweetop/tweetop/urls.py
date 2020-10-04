@@ -16,12 +16,13 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from users.views import index_view, auth_view, callback
-from tweet.views import get_data
+from tweet.views import dashboard, logout
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', index_view),
     path('auth/', auth_view),
     path('callback/', callback),
-    path('home/', get_data),
+    path('home/', dashboard),
+    path('home/logout/', logout),
 ]

@@ -1,11 +1,21 @@
 {% extends 'base.html' %}
+{% load static %}
+
+{% block style %}
+<link href="https://fonts.googleapis.com/css2?family=Blinker:wght@700&display=swap" rel="stylesheet">
+<link rel='stylesheet' href="{% static 'css/login.css' %}">
+{% endblock %}
+
 {% block content %}
-<h1>Kindly Login to your twitter account!</h1>
-<button class="btn btn-success" onclick=" window.open('auth','_blank');"> Login with twitter</button>
-<form action="callback" method="GET">
-	{% csrf_token %}
-	<label>Enter Pin!</label>
-	<input type="number" id="pin" name="pin"> 
-	<input type="submit" value="Submit!">
-</form>
+<img id='logo' src="{% static 'img/twlogo.png' %}">
+<div class='context'>
+	<h1 id="con">Kindly Login to your twitter account!</h1>
+	<button class="btn" onclick=" window.open('auth','_blank');"> Login with  twitter</button>
+	<form action="callback" method="GET">
+		{% csrf_token %}
+		<label>Enter Pin : </label>
+		<input type="number" id="pin" name="pin"> 
+		<input type="submit" value="Submit!" id="but">
+	</form>
+</div>
 {% endblock %}

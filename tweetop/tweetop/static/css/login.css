@@ -1,0 +1,40 @@
+body, html, h1 {
+	font-family: 'Lobster';
+	padding-left: 15px;
+}
+
+#con {
+  font-family: 'Lobster';
+}
+
+#but{
+
+background: #ffcd70;
+
+color: #fff;
+
+border: 2px solid #eee;
+
+border-radius: 5px;
+
+box-shadow: 5px 5px 5px #eee;
+
+text-shadow:none;
+
+}
+
+#but:hover {
+
+background: #fca503;
+
+color: #fff;
+
+border: 2px solid #eee;
+
+border-radius: 7px;
+
+box-shadow: 5px 5px 5px #eee;
+
+text-shadow:none;
+
+}
