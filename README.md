@@ -27,7 +27,8 @@ Tweetop is a webbased app which aims to collect tweets which contains links from
 ### Installation
 
 Install the dependencies and devDependencies and start the server.
-Note: Python must be installed on your system with versions 3.0 or above. You will also need a twitter developer account which you can get one at https://developer.twitter.com/en and a google firebase service account which is available at https://firebase.google.com/.
+
+-Note: Python must be installed on your system with versions 3.0 or above. You will also need a twitter developer account which you can get one at https://developer.twitter.com/en and a google firebase service account which is available at https://firebase.google.com/.
 ```sh
 $ cd tweetop
 $ pip install -r requirements.txt
