@@ -3,8 +3,8 @@ import tweepy
 from django.http import *
 from django.urls import reverse, path
 
-API_key = "ohUSPDNOE5qc1X063SudPPCy9"
-API_key_secret = "UnQJaovLV1PLBpqCDQaM5oKj6K0d2nEFbGOl11VTPScxmICiEE"
+API_key = "TWITTER API KEY"
+API_key_secret = "TWITTER API KEY SECRET"
 
 
 def index_view(request):

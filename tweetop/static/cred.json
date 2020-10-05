@@ -1,12 +1,12 @@
 {
   "type": "service_account",
-  "project_id": "tweetop-26803",
-  "private_key_id": "fa7d0e82691c12614ed3506f19a7d5172e87468a",
-  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQC31wByNERc2UT+\nN1/SsGGZbJ1S376Olx5q0jiNm5kBdML7WunrZjkMjG6L3eupcWGufIFc/oS116PN\nO7R4N440iaihcFwb4UQkVUr6GnTmL9MhVTmE+LDPnR+kL5hvU1xem2uxnS4Yo7Ws\nvEI2cudcvOdGuogLG/2Jzluo3xdlerBM5TA23Jv8kLbOBXtLx2Rt1Vmi8LAzk1Pn\n8RIxv82H+lFbmrMnGKDZhM0bOGO6gFe0hsyI4Q7fgG1X21wNuOIukszJBw1nQAUq\nIUWXp6TamKrBeTiyxw2KMWfezL5PbRNVA92u9BVBc5VnF06iOfA40gdyUax+MiK5\n11fyTzYtAgMBAAECggEAAnJBOS59CWTtFYVBncFcmcjM+CJuO/dX/4ZlcRb0ty+p\nUjnFupeX4z+cJKQoQ7nfRE3iVSKK5rY5obHCx0W/+0QorbXxIoAseApNhDH6w78N\nAW4g+jtqnjyiRDz2O5GsUpL2tidCtYUPgL6u5+AUDZMdmxPrhbBSlEqeGXYXLtxo\nXkXWddEsTSWBzEf6MZHelwzP1EhfJtvAExd/uMD1oZKMVTQLiF+/oT3iiv3yq1aM\nEKqZAlV3UbQpLn/ehsHeUKOnyVmJtImXozTwz2bvKELRWv1dIfcbuq410Qi7MnQl\nQ5xUx9SfMPximfctbGyBq8k4to0UtnehqUEPjWp1uQKBgQDvsBjg/8Qbi/MdLUOo\n3TY+aLnfyiU/BHvmL44wZwwrElxOHnnUY/rwyaSxuRZcc4yeEE1z5JTrW8hKjtMd\nkqkyjsOwlHCprYDkoOsUZvb7fR+Oef8SU3MIOLsHBTpTJLE8P+/LtixP2AzwGT3W\nMkrNXCs/Wb7HX5cKodJVLdvP6QKBgQDEWef1AEK2s6ZyhpMnq3wKFTuCIufvieBJ\nDGSys2J6NZIaTnWQPKLvDkfwqLW8C18LzBlYwn3NNb0cZwVAhdsLxa+GwzTXaTn/\n8AEtTELOvEXHR5WDD+BtZQzZFa/NuJCGy2sXO5EwWsY+dWvctCf1i330OD1k/s0n\n1RLwFbxtpQKBgQCahjIT5HB+veP3XHYxSKQu6f9jOoR2syJZjTEjHVwn7IdbyaQL\nfIWMdMNb3JKA+fGe+a2lWKl1bs+a2adbenDgak/Y6GoVygi93MyRc6wpCEqu5RG/\ns9MGauSQqxsl/RLSX/ntoD3DH+t/YxaNoBC/gntTNT2cdZD/xsG+Lnl2+QKBgH8L\nPQ5FEOVt7/CCKoysZCGSA2L8et1+dGRPZIhLkRhJuTLUOTUORs4ui1Wnk48MPH9B\nm9TWYtd4QdgywC8zbLt9OUkU3QfTyfdTry9D/KYPI4cBRjf6+ddOXrXHVmzhUoIk\n9DGgFR0YXtTi3Nt8pa42h1SRXwgN5Wg0cYBuT/ERAoGBAMZYzalV62kSqqAEZjLW\ndh6l9wecA4UfxoqEgy+cUyHQJ18xyOzTwHy87B4JdrAWvqxZziBm0LOuaUpG76iD\nMckFQ1lOMDs9iOKBxwseKGZanZlWVs4kcJ7n7U1CamhqLyUk1+9SeGonVT5vmKaa\ngsv6EI0+zNXWWOwT9u8UydnG\n-----END PRIVATE KEY-----\n",
-  "client_email": "firebase-adminsdk-yjbaw@tweetop-26803.iam.gserviceaccount.com",
-  "client_id": "109797427926601463059",
-  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
-  "token_uri": "https://oauth2.googleapis.com/token",
-  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
-  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/firebase-adminsdk-yjbaw%40tweetop-26803.iam.gserviceaccount.com"
+  "project_id": "Your Project Id",
+  "private_key_id": "**** YOUR PRIVATE KEY ID*********",
+  "private_key": "***PRIVATE KEY****",
+  "client_email": "EMAIL OF CLIENT",
+  "client_id": "ID",
+  "auth_uri": "AUTH URL",
+  "token_uri": "TOKEN URL",
+  "auth_provider_x509_cert_url": "AUTH_PRO",
+  "client_x509_cert_url": "CERT URL"
 }
