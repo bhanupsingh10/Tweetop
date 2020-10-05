@@ -23,8 +23,6 @@ Tweetop is a webbased app which aims to collect tweets which contains links from
 - API
     - Tweepy Api
 ```
-![alt text](https://www.djangoproject.com/m/img/logos/django-logo-negative.png =250x250)
-![alt text](https://pbs.twimg.com/media/DLOiUVyU8AAJODb.png =250x250)
 
 ### Installation
 
