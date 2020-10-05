@@ -65,6 +65,11 @@ For every tweet the Schema is defined as follows
     'url': "URL that is contained in the tweet"
 }
 ```
+### Images
+
+![Dashboard](https://drive.google.com/file/d/1GJHyvR__vNit3ePHk-q8pWmWrfGU15IO/view?usp=sharing)
+![Login](https://drive.google.com/file/d/1FBc0LfQzS3WLTiOUUK5svAUjPDy_bjR1/view?usp=sharing)
+
 ### A Glimpse into the Backend
 The backend of this app is managed by Django and Python. Tweepy API connects to the twitter's account of the user. Once connected the API fetches all the tweets of the user along with that of his/her friends. Then as clients requirement only tweets within the past 7 days are required , so a filtering function is used for that purpose. Moreover only those tweets are required which have links assosated with them, so second filter mechanism filter those tweets which have links.
 
