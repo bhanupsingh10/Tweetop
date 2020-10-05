@@ -38,25 +38,25 @@ def date_filter(my_tweets):		# Return tweets of past 7 days!
 			break
 	return filtered_data
 
-def get_data(request):
+def get_data(request):			# Main function that handles data collection and database connections
 	api = get_Api(request)
 	BASE_DIR = os.getcwd()
-	print(BASE_DIR)
+	#print(BASE_DIR)
 	try:
-		firebase_admin.get_app()
+		firebase_admin.get_app()		
 	except ValueError as e:
-		cred = credentials.Certificate(os.path.join(BASE_DIR,"tweet", "static", "cred.json"))
-		firebase_admin.initialize_app(cred)
+		cred = credentials.Certificate(os.path.join(BASE_DIR,"static", "cred.json"))			# Initalizing our firebase app
+		firebase_admin.initialize_app(cred)	
 	
 	db = firestore.client()
-	doc_ref = db.collection('users').document('data')
+	doc_ref = db.collection('users').document('data')		# A cursor to our database
 	#print(api)
 	me = api.me()
-	frnds = api.friends()
+	frnds = api.friends()			# Users friend list
 	users_list = []
 	for f in frnds:
-		users_list.append(f.screen_name)
-	users_list.append(me.screen_name)
+		users_list.append(f.screen_name)		# User's friends username
+	users_list.append(me.screen_name)		
 	#print(users_list)
 	full_data = []
 	trending_user = {}
@@ -65,7 +65,7 @@ def get_data(request):
 		my_tweets = api.user_timeline(uid, count=10)			# Getting User Tweets
 		my_tweets = url_filter(my_tweets)					# Filtering tweets wih links
 		my_tweets = date_filter(my_tweets)				# Filtering tweets of past 7 days
-		trending_user[uid] = len(my_tweets)
+		trending_user[uid] = len(my_tweets)				# User tweet count updated
 		#print(len(my_tweets))
 		for tweets in my_tweets:
 			my_tweet_text = tweets.text
@@ -78,12 +78,12 @@ def get_data(request):
 				'url' : tweets.entities['urls'][0]['expanded_url'],
 				'dp_url': dp_url
 			}
-			doc_ref.collection(uid).document(tweets.id_str).set(my_dict)
+			doc_ref.collection(uid).document(tweets.id_str).set(my_dict)		# Data inserted into firebase
 			full_data.append(my_dict)
 			url = my_dict['url']
-			result = re.sub(r'(.*://)?([^/?]+).*', '\g<1>\g<2>', url)
+			result = re.sub(r'(.*://)?([^/?]+).*', '\g<1>\g<2>', url)		# Getting the domain from url using regex
 			if result in trending_url.keys():
-				trending_url[result]+=1
+				trending_url[result]+=1					# Updating count of trendling links
 			else:
 				trending_url[result] = 0
 	
@@ -91,13 +91,13 @@ def get_data(request):
 
 def dashboard(request):
 	my_data, trending_url, trending_user = get_data(request)
-	top_link = nlargest(3, trending_url, key = trending_url.get)
-	top_user = nlargest(3, trending_user, key = trending_user.get)
+	top_link = nlargest(3, trending_url, key = trending_url.get)		# Using heap to get top 3 links.
+	top_user = nlargest(3, trending_user, key = trending_user.get)		# Using heap to get top 3 users.
 
 	return render(request, 'home.html', {'data':my_data, 'links':top_link, 'users':top_user})
 
 def logout(request):
-	request.session['access_key']=None
+	request.session['access_key']=None				# Deleting the session keys when logout
 	request.session['access_key_secret']=None
 	return index_view(request)
 
