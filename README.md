@@ -64,8 +64,10 @@ For every tweet the Schema is defined as follows
 }
 ```
 ### A Glimpse into the Backend
-The backend of this app is managed by Django and Python. Tweepy API connects to the twitter's account of the user. Once connected the API fetches all the tweets of the user along with that of his/her friends. Then as clients requirement only tweets within the past 7 days are required , so a filtering function is used for that purpose. Moreover only those tweets are required which have links assosated with them, so second filter mechanism filter those tweets which have links.\\
-So finally we are left with the required tweets of the user. Same process goes for users friends as well and we are left with the tweets that have to be displayed on the user's dashboard. Now every tweet list length of the user, gives details about the user's activity of that week and links shared by user along with his/her friends gives detail about the trending links. These are actually counted through a dictionary which makes this opeartion less costly.\\
+The backend of this app is managed by Django and Python. Tweepy API connects to the twitter's account of the user. Once connected the API fetches all the tweets of the user along with that of his/her friends. Then as clients requirement only tweets within the past 7 days are required , so a filtering function is used for that purpose. Moreover only those tweets are required which have links assosated with them, so second filter mechanism filter those tweets which have links.
+
+So finally we are left with the required tweets of the user. Same process goes for users friends as well and we are left with the tweets that have to be displayed on the user's dashboard. Now every tweet list length of the user, gives details about the user's activity of that week and links shared by user along with his/her friends gives detail about the trending links. These are actually counted through a dictionary which makes this opeartion less costly.
+
 Now we are requred to give top users and top links and for this app we are showing top 3 on both. A heap is used for that which given us top 3 users who shared most links and also top 3 trending links . Please not for links we are considering only domain names not exacty where the links refers.
 Finally our data collection is done, and we save that data to our firebase server and display that data on or web site.
 
