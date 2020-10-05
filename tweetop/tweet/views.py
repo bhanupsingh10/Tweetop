@@ -13,6 +13,7 @@ from datetime import date
 import re
 from heapq import nlargest
 from users.views import index_view
+
 # Create your views here.
 
 def url_filter(my_tweets): 		# Returns only tweets with links
@@ -41,7 +42,6 @@ def get_data(request):
 	api = get_Api(request)
 	BASE_DIR = os.getcwd()
 	print(BASE_DIR)
-	
 	try:
 		firebase_admin.get_app()
 	except ValueError as e:
@@ -86,7 +86,7 @@ def get_data(request):
 				trending_url[result]+=1
 			else:
 				trending_url[result] = 0
-
+	
 	return full_data, trending_url, trending_user
 
 def dashboard(request):
@@ -100,3 +100,5 @@ def logout(request):
 	request.session['access_key']=None
 	request.session['access_key_secret']=None
 	return index_view(request)
+
+

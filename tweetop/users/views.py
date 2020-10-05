@@ -1,8 +1,7 @@
 from django.shortcuts import render, render_to_response, redirect
 import tweepy
 from django.http import *
-from django.urls import reverse
-
+from django.urls import reverse, path
 
 API_key = "ohUSPDNOE5qc1X063SudPPCy9"
 API_key_secret = "UnQJaovLV1PLBpqCDQaM5oKj6K0d2nEFbGOl11VTPScxmICiEE"
@@ -11,7 +10,10 @@ API_key_secret = "UnQJaovLV1PLBpqCDQaM5oKj6K0d2nEFbGOl11VTPScxmICiEE"
 def index_view(request):
 	print(request)
 	if(checker(request)):
-		return redirect("http://127.0.0.1:8000/home")
+		print("Path is: ", request.path)
+		print("Domain is: ", request.get_host())
+		return redirect("http://" + request.get_host() + "/home")
+		#return path('home/', dashboard)
 	else:
 		return render_to_response("login.html")
 
@@ -54,7 +56,7 @@ def callback(request):
 	except:
 		print("Error Occured at views 43!")
 	
-	return redirect("http://127.0.0.1:8000")
+	return redirect("http://" + request.get_host())
 #
 # return render(request,'index_view', {})
 	#return render(request,'home.html',{})
