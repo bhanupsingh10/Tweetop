@@ -1,11 +1,30 @@
 h1 {
-	font-family: 'Lobster';
+	font-family: 'Blinker', sans-serif;
 	padding-left: 15px;
+	font-weight: bold;
 }
 
 body{
 	background-color: #15202b;
 	color: #f7f7f8;
+}
+
+.context{
+	float: right;
+	right: 75%;
+	width: 550px;
+	height: 250px;
+	border-radius: 20px;
+	padding: 10px;
+	overflow: auto;
+	text-align: center;
+	margin-right: 100px;
+	margin-top: 200px;
+}
+
+img{
+	width: 50%;
+	height: auto;
 }
 
 #con {
@@ -18,6 +37,10 @@ body{
 	font-weight: bold;
 	border: 2px solid #1da1f2;
 	border-radius: 10px;
+	margin-bottom: 15px;
+	margin-top: 10px;
+	padding-left: 20px;
+	padding-right: 20px;
 }
 
 .btn:hover{
@@ -33,10 +56,12 @@ body{
 	padding: 4px;
 	padding-left: 10px;
 	padding-right: 10px;
+	margin-left: 5px;
 }
 
 #pin{
 	border-radius: 5px;
+	color: black;
 }
 
 #but:hover{

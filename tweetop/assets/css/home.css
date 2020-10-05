@@ -1,0 +1,55 @@
+#Wel{
+	font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+	padding-bottom: 20px;
+	color: #f7f7f8;
+	padding-left: 15px;
+	margin-top: 5px;
+}
+
+button{
+	right: 10px;
+	float:right;
+	background-color: red;
+	color: #f7f7f8;
+	font-weight: bold;
+	border: 2px solid #1da1f2;
+	border-radius: 10px;
+	margin-bottom: 15px;
+	margin-top: 10px;
+	padding-left: 20px;
+	padding-right: 20px;
+}
+
+button:hover{
+	background: #1da1f2;
+	color: #f7f7f8;
+}
+
+#home{
+	background-color: #15202b;
+}
+
+.w3-container{
+	color: #f7f7f8;
+}
+
+ol{
+	font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+	color: #f7f7f8;
+	padding-right: 50px;
+    margin-left: 15px;
+    width: 358px;
+    border-radius: 15px;
+    padding-bottom: 5px;
+}
+
+.top{
+	font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-style: italic;
+    font-weight: bold;
+    color: #f7f7f8;
+    padding-right: 50px;
+    margin-left: 25px;
+    margin-bottom: 4px;
+    font-size: unset;
+}
