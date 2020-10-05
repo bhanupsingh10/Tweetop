@@ -33,18 +33,21 @@ def date_filter(my_tweets):		# Return tweets of past 7 days!
 		D = d2 - d1
 		if(int(D.days)<7):
 			filtered_data.append(tweet)
-	
+		else:
+			break
 	return filtered_data
 
 def get_data(request):
 	api = get_Api(request)
 	BASE_DIR = os.getcwd()
 	print(BASE_DIR)
+	
 	try:
 		firebase_admin.get_app()
 	except ValueError as e:
 		cred = credentials.Certificate(os.path.join(BASE_DIR,"tweet", "static", "cred.json"))
 		firebase_admin.initialize_app(cred)
+	
 	db = firestore.client()
 	doc_ref = db.collection('users').document('data')
 	#print(api)
