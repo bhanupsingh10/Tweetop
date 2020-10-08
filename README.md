@@ -1,6 +1,6 @@
 # Tweetop
 
-[![Build Status](https://travis-ci.org/joemccann/dillinger.svg?branch=master)](https://travis-ci.org/joemccann/dillinger)
+[![Build Status]()]()
 
 Tweetop is a webbased app which aims to collect tweets which contains links from user stream i.e user tweets and user's friends tweet of the past 7 days. Once fetched and stored in a database, the app should:
   - Display Actual Tweets containing links
